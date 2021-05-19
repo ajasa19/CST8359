@@ -1,0 +1,7 @@
+C:\Users\ajasa\source\repos\CST8359\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\ajasa\source\repos\CST8359\Lab1\bin\Debug\Lab1.exe
+C:\Users\ajasa\source\repos\CST8359\Lab1\bin\Debug\Lab1.pdb
+C:\Users\ajasa\source\repos\CST8359\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\ajasa\source\repos\CST8359\Lab1\obj\Debug\Lab1.exe
+C:\Users\ajasa\source\repos\CST8359\Lab1\obj\Debug\Lab1.pdb
+C:\Users\ajasa\source\repos\CST8359\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
