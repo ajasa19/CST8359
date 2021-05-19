@@ -131,15 +131,11 @@ namespace Lab1
         }
         public static void LinqLambdaSort(IList<string> words) //LINQ/Lambda sort words
         {
-
+            var listCopy = words.ToList();
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start(); //start timer
 
-              var lengths = from text in words //LINQ sort
-                           orderby text.ToString()
-                           select text;
-
-            //words.Sort((a, b) => (a.ToString()[0].CompareTo(b.ToString()[0]))); //lambda sort
+            listCopy.Sort((a, b) => (a.ToString()[0].CompareTo(b.ToString()[0]))); //lambda sort
 
             stopWatch.Stop(); //stop timer
             string sortTime = stopWatch.Elapsed.Milliseconds.ToString(); //re-format time to ms
