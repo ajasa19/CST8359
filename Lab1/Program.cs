@@ -103,8 +103,19 @@ namespace Lab1
         }
         public static IList<string> bubbleSort(IList<string> words) //Bubble sort words
         {
-            var listCopy = words.ToList();
-            int listLength = listCopy.Count();
+            IList<string> listCopy = null;
+            int listLength = 0;
+
+            try
+            {      
+            listCopy = words.ToList();
+            listLength = listCopy.Count();
+            }
+            catch
+            {
+                Console.Write("null passed to function can not sort.\n\n");
+                return null;
+            }
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start(); //start timer
 
