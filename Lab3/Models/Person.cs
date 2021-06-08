@@ -5,6 +5,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+/********************************
+Student name:   Asim Jasarevic
+Student number:	040922815
+Section:        CST8359_303
+Lab:			Lab 3 – Razor and Request/Session
+File:           Perosn.cs
+Purpose:        Represent the shape of the data as public properties and business logic as methods. 
+
+ ********************************/
+
 namespace Lab3.Models
 {
     public class Person

@@ -1,8 +1,14 @@
 ﻿@using Microsoft.AspNetCore.Http;
 
 @*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 3 – Razor and Request/Session
+    File:           Count.cshtmml
+    Purpose:        Use passed qty value and loop to display lyric text
 *@
+
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Lab3 count";
@@ -10,17 +16,22 @@
 
 
 <h3>Count bottles page</h3>
+
+<!--input to go back to razor-->
 <form asp-action="Razor" method="post">
     <input type="submit" value="New lyrics" />
 </form>
 
 @{
-
+    <!--get string value from session-->
     string bottleQuantityString = @Context.Session.GetString("bottleNum");
+    <!--convert string value to int for loop-->
     int bottleQuantity = Convert.ToInt32(bottleQuantityString);
 
+    <!--while loop to display lyrics-->
     while (bottleQuantity > -1)
     {
+        <!--if qty not 1 or 0 display normal lyrics-->
         if (bottleQuantity > 1)
         {
             <br>
@@ -33,6 +44,7 @@
         }
         else if (bottleQuantity == 1)
         {
+            <!-- if qty is 1 display "one more" lyrics-->
             <br>
             <p>@bottleQuantity green bottle hanging on the wall,</p>
             <p>@bottleQuantity green bottle hanging on the wall,</p>
@@ -43,6 +55,7 @@
         }
         else if (bottleQuantity == 0)
         {
+            <!-- if qty is 0 display "no more" lyrics-->
             <br>
             <p>No more green bottles hanging on the wall,</p>
             <p>no more green bottles hanging on the wall,</p>

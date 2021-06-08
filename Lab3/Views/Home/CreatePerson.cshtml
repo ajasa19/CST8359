@@ -1,10 +1,18 @@
-﻿@{
-    Layout = "_Layout";
-    ViewData["Title"] = "Lab3 create person";
-}
+﻿@*
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 3 – Razor and Request/Session
+    File:           CreatePerson.cshtmml
+    Purpose:        Get inputs from user and pass it on to DisplayPerson
+*@
+
+@{ Layout = "_Layout";
+                ViewData["Title"] = "Lab3 create person"; }
 
 <form asp-controller="Home" asp-action="DisplayPerson" method="post">
 
+    <!--note took table structure from prof demo-->
     <h3>Create person</h3>
     <table>
         <tr>
@@ -34,7 +42,7 @@
         <tr>
             <td>Date of birth: </td>
             <td>
-                <input type="date" name="birthDate required="required""><br />
+                <input type="date" name="birthDate" required""><br />
             </td>
         </tr>
         <tr>
