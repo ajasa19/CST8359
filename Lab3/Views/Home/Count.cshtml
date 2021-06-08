@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Lab3 count";
+}
+
+
+<h3>Count bottles page</h3>
+<form asp-action="Razor" method="post">
+    <input type="submit" value="New lyrics" />
+</form>
+
+@{
+
+    string bottleQuantityString = @Context.Session.GetString("bottleNum");
+    int bottleQuantity = Convert.ToInt32(bottleQuantityString);
+
+    while (bottleQuantity > -1)
+    {
+        if (bottleQuantity > 1)
+        {
+            <br>
+            <p>@bottleQuantity green bottles hanging on the wall,</p>
+            <p>@bottleQuantity green bottles hanging on the wall,</p>
+            <p>And if one green bottle should accidentally fall,</p>
+            <p>There'll be @(bottleQuantity - 1) green bottles hanging on the wall.</p>
+            <br>
+
+        }
+        else if (bottleQuantity == 1)
+        {
+            <br>
+            <p>@bottleQuantity green bottle hanging on the wall,</p>
+            <p>@bottleQuantity green bottle hanging on the wall,</p>
+            <p>And if one green bottle should accidentally fall,</p>
+            <p>There'll be no green bottles hanging on the wall.</p>
+            <br>
+
+        }
+        else if (bottleQuantity == 0)
+        {
+            <br>
+            <p>No more green bottles hanging on the wall,</p>
+            <p>no more green bottles hanging on the wall,</p>
+            <p>Go to the store and buy some more,</p>
+            <p>99 green bottles hanging on the wall.</p>
+            <br>
+        }
+
+        bottleQuantity--;
+
+    }
+
+}
+

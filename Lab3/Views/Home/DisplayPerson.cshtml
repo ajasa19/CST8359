@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@{ Layout = "_Layout";
+    ViewData["Title"] = "Lab3 display person"; }
+
+<h3>Display person</h3>
+<table>
+    <tr>
+        <td>First name: </td>
+        <td>
+            @Model.firstName
+        </td>
+    </tr>
+    <tr>
+        <td>Last name: </td>
+        <td>
+            @Model.lastName
+        </td>
+    </tr>
+    <tr>
+        <td>Age: </td>
+        <td>
+            @Model.age
+        </td>
+    </tr>
+    <tr>
+        <td>Email address: </td>
+        <td>
+            @Model.emailAddress
+        </td>
+    </tr>
+    <tr>
+        <td>Date of birth: </td>
+        <td>
+            @Model.birthDate
+        </td>
+    </tr>
+    <tr>
+        <td>Description: </td>
+        <td>
+            @Model.description
+        </td>
+    </tr>
+</table>
