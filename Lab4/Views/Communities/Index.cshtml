@@ -14,10 +14,10 @@
     <thead>
         <tr>
             <th>
-                Title
+                Title <!--model casuing issues just plain html now-->
             </th>
             <th>
-                Budget
+                Budget <!--model casuing issues just plain html now-->
             </th>
             <th></th>
         </tr>
@@ -33,7 +33,7 @@
                     @Html.DisplayFor(modelItem => item.Budget)
                 </td>
                 <td>
-                    <a asp-action="Index" asp-route-id="@item.Id">Select</a> |
+                    <a asp-action="Index" asp-route-id="@item.Id">Select</a> | <!--new option added-->
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -42,28 +42,31 @@
         }
     </tbody>
 </table>
-
+<!-->added if to get Select option working
+      Source code from Index.cshtml.cshtml-->
 @if (Model.CommunityMemberships != null)
 {
-<h3>
-    Members of the Community:
-</h3>
+    <h3>
+        Members of the Community:
+    </h3>
     <table class="table">
         <tr>
             @if (Model.CommunityMemberships.Count() > 0)
-             {
-                <th> Name </th> }
+            {
+                <th> Name </th>
+ }
             else
             {
-                <th> No students in this community.</th>}
-                </tr>
-                @foreach (var item in Model.CommunityMemberships.Select(i => i.Student))
-                {
-                    <tr>
-                    <td>
+                <th> No students in this community.</th>
+}
+        </tr>
+        @foreach (var item in Model.CommunityMemberships.Select(i => i.Student))
+        {
+            <tr>
+                <td>
                     @item.FullName
-                    </td>
-                    </tr>
-                 }
-        </table>
- }
+                </td>
+            </tr>
+        }
+    </table>
+}

@@ -21,21 +21,22 @@ namespace Lab4.Controllers
         }
 
         // GET: Communities
+        // had to edit this to get "Select" working
+        // Source code from DriversController.cs
         public async Task<IActionResult> Index(string ID)
         {
             CommunityViewModel communityViewModel = new CommunityViewModel();
-
             communityViewModel.Communities = await _context.Communities
-                   .Include(i => i.CommunityMemberships)
-                        .ThenInclude(i => i.Student)
+                  .Include(i => i.CommunityMemberships)
+                  .ThenInclude(i => i.Student)
                   .AsNoTracking()
-                  .OrderBy(i => i.Title)
                   .ToListAsync();
 
             if (ID != null)
             {
                 ViewData["CommunityID"] = ID;
-                communityViewModel.CommunityMemberships = communityViewModel.Communities.Where(i => i.Id == ID).Single().CommunityMemberships;
+                communityViewModel.CommunityMemberships = communityViewModel.Communities.Where
+                    (i => i.Id == ID).Single().CommunityMemberships;
             }
 
             return View(communityViewModel);
