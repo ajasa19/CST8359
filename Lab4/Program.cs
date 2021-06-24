@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Lab4.Data;
 
+/*
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 4 – The Entity Framework 
+    File:           program.cs
+    Purpose:        Entry point of app, alterd to call function to initialize database and log error if issue arrises
+*/
+
 namespace Lab4
 {
     public class Program

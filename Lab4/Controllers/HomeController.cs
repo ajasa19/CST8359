@@ -3,6 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lab4.Data;
+
+/*
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 4 – The Entity Framework 
+    File:           HomeController.cs
+    Purpose:        Configure routes to index and error page
+*/
 
 namespace Lab4.Controllers
 {
@@ -14,7 +24,7 @@ namespace Lab4.Controllers
         }
         public IActionResult Error()
         {
-            return View(); // Do you need to modify this line? Use your judgement based on the app you developed so far
+            return View(); // No need to change this line
         }
 
     }

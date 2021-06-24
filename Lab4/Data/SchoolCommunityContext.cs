@@ -5,6 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/*
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 4 – The Entity Framework 
+    File:           SchoolCommunityContext.cs
+    Purpose:        Direct links between objects and tables
+    Source:         aarad - ac / EFCore / lab4
+*/
+
+
 namespace Lab4.Data
 {
     public class SchoolCommunityContext : DbContext
@@ -23,7 +34,8 @@ namespace Lab4.Data
             modelBuilder.Entity<Community>().ToTable("Community");
             modelBuilder.Entity<CommunityMembership>().ToTable("CommunityMembership");
 
-            modelBuilder.Entity<CommunityMembership>().HasKey(c => new { c.StudentId, c.CommunityId });
+            modelBuilder.Entity<CommunityMembership>()
+                .HasKey(c => new { c.StudentId, c.CommunityId });
         }
     }
 }

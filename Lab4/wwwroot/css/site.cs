@@ -1,6 +1,16 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/*
+    Student name: Asim Jasarevic
+    Student number:	040922815
+    Section: CST8359_303
+    Lab:			Lab 4 – The Entity Framework
+    File:           site.css
+    Purpose:        stylesheet
+    Source:         aarad - ac / EFCore / lab4
+*/
+
 a.navbar - brand {
     white - space: normal;
     text - align: center;

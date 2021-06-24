@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab4.Data;
 using Lab4.Models;
+using Lab4.Models.ViewModels;
 
 namespace Lab4.Controllers
 {
@@ -20,9 +21,24 @@ namespace Lab4.Controllers
         }
 
         // GET: Communities
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string ID)
         {
-            return View(await _context.Communities.ToListAsync());
+            CommunityViewModel communityViewModel = new CommunityViewModel();
+
+            communityViewModel.Communities = await _context.Communities
+                   .Include(i => i.CommunityMemberships)
+                        .ThenInclude(i => i.Student)
+                  .AsNoTracking()
+                  .OrderBy(i => i.Title)
+                  .ToListAsync();
+
+            if (ID != null)
+            {
+                ViewData["CommunityID"] = ID;
+                communityViewModel.CommunityMemberships = communityViewModel.Communities.Where(i => i.Id == ID).Single().CommunityMemberships;
+            }
+
+            return View(communityViewModel);
         }
 
         // GET: Communities/Details/5

@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/*
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 4 – The Entity Framework 
+    File:           CommunityViewModel.cshtml
+    Purpose:        
+    Source:         aarad - ac / EFCore / lab4
+*/
+
 namespace Lab4.Models.ViewModels
 {
     public class CommunityViewModel

@@ -11,10 +11,25 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Lab4.Data;
 
+/*
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 4 – The Entity Framework 
+    File:           Startup.cs
+    Purpose:        Configure the app's services
+*/
+
 namespace Lab4
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -22,11 +37,6 @@ namespace Lab4
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<SchoolCommunityContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
-        }
-        public IConfiguration Configuration { get; }
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -16,6 +16,6 @@
     <WebStackScaffolding_DbContextTypeFullName>Lab4.Data.SchoolCommunityContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
-    <NameOfLastUsedPublishProfile>C:\Users\ajasa\source\repos\Lab4\Lab4\Properties\PublishProfiles\ajasalab04 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>ajasalab04 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

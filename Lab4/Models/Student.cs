@@ -5,11 +5,19 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+/*
+    Student name:   Asim Jasarevic
+    Student number:	040922815
+    Section:        CST8359_303
+    Lab:			Lab 4 – The Entity Framework 
+    File:           Student.cs
+    Purpose:        data field model for student objects
+*/
+
 namespace Lab4.Models
 {
     public class Student
     {
-        public ICollection<CommunityMembership> CommunityMemberships { get; set; }
         public int Id { get; set; }
 
         [Required]
@@ -27,7 +35,7 @@ namespace Lab4.Models
         [Display(Name = "Enrollment Date")]
         public DateTime EnrollmentDate { get; set; }
 
-        [Display(Name = "Full Name")]
+        [Display(Name = "Name")]
         public string FullName
         {
             get
@@ -35,5 +43,7 @@ namespace Lab4.Models
                 return LastName + ", " + FirstName;
             }
         }
+
+        public ICollection<CommunityMembership> CommunityMemberships { get; set; }
     }
 }
