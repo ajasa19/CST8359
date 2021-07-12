@@ -25,6 +25,7 @@
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="AnswerImageId" />
+        <input type="hidden" asp-for="Question" /> <!--pass question value from row to HttpPost-->
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

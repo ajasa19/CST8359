@@ -48,6 +48,7 @@ namespace Lab5.Controllers
             string unasumingContainerName = "";
             int questionInt = 0;
 
+            // if radio button value 0 set blob container to be filled computer else earth 
             if (IFormCollection["Question"] == "0")
             {
                 unasumingContainerName = computerContainerName;
@@ -130,12 +131,13 @@ namespace Lab5.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id, IFormCollection IFormCollection)
+        public async Task<IActionResult> DeleteConfirmed(int id, int Question)
         {
             var image = await _context.AnswerImages.FindAsync(id);
             string unasumingContainerName = "";
 
-            if (IFormCollection["Question"] == "0")
+            // if question value 1 set blob container to be deleted from computer else earth 
+            if (Question == 0)
             {
                 unasumingContainerName = computerContainerName;
             }
