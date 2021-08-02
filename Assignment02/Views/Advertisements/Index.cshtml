@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Lab4.Models.Advertisement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    string CommunityId = "0";
+    try
+    {
+        string path = Context.Request.Path;
+        CommunityId = path.Substring(22, 2);
+    } catch (Exception)
+    {
+    }
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Upload" asp-route-id="@CommunityId">Upload New @CommunityId</a>
+</p>
+<p>
+    <a asp-controller="Communities" asp-action="Index">Back to List</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                file name
+            </th>
+            <th>
+                Image
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    <img src="@item.Url" style="max-width: 400px;" />
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.ImageId" asp-route-CommunityId="@CommunityId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
