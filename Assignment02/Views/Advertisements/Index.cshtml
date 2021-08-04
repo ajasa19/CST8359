@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Lab4.Models.Advertisement>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Advertisement Index";
 }
 @{
     string CommunityId = "0";
@@ -14,10 +14,10 @@
     }
 }
 
-<h1>Index</h1>
+<h1>Advertisement Index </h1>
 
 <p>
-    <a asp-action="Upload" asp-route-id="@CommunityId">Upload New @CommunityId</a>
+    <a asp-action="Upload" asp-route-id="@CommunityId">Upload New to @CommunityId</a>
 </p>
 <p>
     <a asp-controller="Communities" asp-action="Index">Back to List</a>
@@ -35,8 +35,12 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            int photoNum = 0;
+        }
         @foreach (var item in Model)
         {
+            photoNum++;
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.FileName)
@@ -48,6 +52,12 @@
                     <a asp-action="Delete" asp-route-id="@item.ImageId" asp-route-CommunityId="@CommunityId">Delete</a>
                 </td>
             </tr>
+        }
+        @{
+            if (photoNum == 0)
+            {
+                <p>No advertisements for this community.</p>
+            }
         }
     </tbody>
 </table>

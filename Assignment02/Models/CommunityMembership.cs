@@ -7,7 +7,7 @@ using System.Threading.Tasks;
     Student name:   Asim Jasarevic
     Student number:	040922815
     Section:        CST8359_303
-    Lab:			Lab 4 – The Entity Framework 
+    Lab:			Assignment01 – School Community
     File:           CommunityMembership.cs
     Purpose:        data field model for membership objects
 */

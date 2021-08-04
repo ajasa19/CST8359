@@ -7,7 +7,7 @@ using System.Threading.Tasks;
     Student name:   Asim Jasarevic
     Student number:	040922815
     Section:        CST8359_303
-    Lab:			Lab 4 – The Entity Framework 
+    Lab:			Assignment01 – School Community
     File:           CommunityViewModel.cshtml
     Purpose:        
     Source:         aarad - ac / EFCore / lab4

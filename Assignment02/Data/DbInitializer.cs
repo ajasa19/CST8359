@@ -9,7 +9,7 @@ using Lab4.Models;
     Student name:   Asim Jasarevic
     Student number:	040922815
     Section:        CST8359_303
-    Lab:			Lab 4 – The Entity Framework 
+    Lab:			Assignment01 – School Community
     File:           DbInitializer.cs
     Purpose:        Create the database and required tables based on the data model classes
 */

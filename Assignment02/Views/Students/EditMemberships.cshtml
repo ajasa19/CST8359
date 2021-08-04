@@ -1,5 +1,9 @@
 ﻿@model Lab4.Models.ViewModels.CommunityViewModel
 
+@{
+    ViewData["Title"] = "Edit Membership";
+}
+
 <h1>Edit</h1>
 <h4>Student</h4>
 
@@ -17,34 +21,36 @@
     </thead>
     <tbody>
         @foreach (var s in Model.Students)
-        { 
-        @foreach (var c in Model.Communities)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(Communities => c.Title)
-            </td>
-            <td>
-                <!--check if CommunityMemberships table has any rows with both the passed community id and student id-->
-                @if (Model.CommunityMemberships.Any(i => i.CommunityId == c.Id) == false)
-                { 
-                /*if there is no row pass id's to run Register*/
-                <a asp-action="Register" asp-route-StudentId="@s.Id"
-                                         asp-route-CommunityId="@c.Id">Register</a>
-                } else {
-                /*if there is a row pass id's to run and Unregister*/
-                <a asp-action="Unregister" asp-route-StudentId="@s.Id" 
-                                           asp-route-CommunityId="@c.Id">Unregister</a>
-                }
-            </td>
-        </tr>
-        }
+            @foreach (var c in Model.Communities)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(Communities => c.Title)
+                    </td>
+                    <td>
+                        <!--check if CommunityMemberships table has any rows with both the passed community id and student id-->
+                        @if (Model.CommunityMemberships.Any(i => i.CommunityId == c.Id) == false)
+                        {
+                            /*if there is no row pass id's to run Register*/
+                            <a asp-action="Register" asp-route-StudentId="@s.Id"
+                               asp-route-CommunityId="@c.Id">Register</a>
+                        }
+                        else
+                        {
+                            /*if there is a row pass id's to run and Unregister*/
+                            <a asp-action="Unregister" asp-route-StudentId="@s.Id"
+                               asp-route-CommunityId="@c.Id">Unregister</a>
+                        }
+                    </td>
+                </tr>
             }
+        }
     </tbody>
 </table>
-        <div>
-            <a asp-action="Index">Back to List</a>
-        </div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
 
 

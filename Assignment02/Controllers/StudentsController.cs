@@ -209,9 +209,9 @@ namespace Lab4.Controllers
 
         // GET: Students/Register/5
         // get student id and community id and add row from table
-        public async Task<IActionResult> Register(int studentId, string communityId)
+        public async Task<IActionResult> Register(int StudentId, string CommunityId)
         {
-            var addRow = new CommunityMembership { StudentId = studentId, CommunityId = communityId };
+            var addRow = new CommunityMembership { StudentId = StudentId, CommunityId = CommunityId };
 
             _context.CommunityMemberships.Add(addRow);
             await _context.SaveChangesAsync();

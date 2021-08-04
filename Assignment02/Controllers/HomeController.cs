@@ -9,7 +9,7 @@ using Lab4.Data;
     Student name:   Asim Jasarevic
     Student number:	040922815
     Section:        CST8359_303
-    Lab:			Lab 4 – The Entity Framework 
+    Lab:			Assignment01 – School Community
     File:           HomeController.cs
     Purpose:        Configure routes to index and error page
 */

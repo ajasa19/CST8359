@@ -9,7 +9,7 @@ using System.Threading.Tasks;
     Student name:   Asim Jasarevic
     Student number:	040922815
     Section:        CST8359_303
-    Lab:			Lab 4 – The Entity Framework 
+    Lab:			Assignment01 – School Community
     File:           SchoolCommunityContext.cs
     Purpose:        Direct links between objects and tables
     Source:         aarad - ac / EFCore / lab4

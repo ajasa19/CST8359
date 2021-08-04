@@ -6,7 +6,7 @@
     string CommunityId = path.Substring(23, 2);
 }
 
-<h1>Upload</h1>
+<h1>Advertisement Upload</h1>
 
 <h4>Upload a Picture</h4>
 <hr />
@@ -15,7 +15,6 @@
         <form asp-action="Upload" enctype="multipart/form-data">
             <div class="form-group">
                 <div class="btn btn-sm float-left">
-                    <p>@CommunityId</p>
                     <input name="CommunityId" type="hidden" value="@CommunityId">
                     <input name="AddImage" type="file">
                 </div>
@@ -29,7 +28,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-route-id="@CommunityId">Back to List</a>
 </div>
 
 @section Scripts {
